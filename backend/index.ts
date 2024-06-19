@@ -1,7 +1,7 @@
-import express from 'express';
+import express, { Response } from 'express';
 import cors from 'cors';
 import fs from 'fs';
-import { IData } from './types';
+import { IData, RequestWithBody } from './types';
 
 let rawData = fs.readFileSync('data.json');
 let data: IData[] = JSON.parse(rawData.toString());
@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-app.post<IData>('/submit', (req, res) => {
+app.post('/submit', (req: RequestWithBody<IData>, res: Response<IData[]>) => {
   if (Object.keys(req.body).length === 0) return res.sendStatus(400);
 
   setTimeout(() => {

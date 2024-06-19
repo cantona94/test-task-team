@@ -14,8 +14,8 @@ function App() {
     mode: 'onChange',
   });
 
-  const emailError = formState.errors['email']?.message;
-  const numberError = formState.errors['number']?.message;
+  const emailError: string | undefined = formState.errors['email']?.message;
+  const numberError: string | undefined = formState.errors['number']?.message;
 
   const onSubmit: SubmitHandler<IForm> = (dataForm) => {
     setData(null);
