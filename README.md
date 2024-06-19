@@ -7,9 +7,11 @@ npm v10.2.0
 ### Run on a local host
 
 1. Clone the repository
-   ```sh
-   git clone https://github.com/cantona94/test-task-team.git
-   ```
+
+```sh
+git clone https://github.com/cantona94/test-task-team.git
+```
+
 2. Install NPM packages in the "backend" directory and launch
 
 ```sh
